@@ -29,3 +29,19 @@ button:hover {
     background-color: lightgrey;
     cursor: pointer;
 }
+
+.inputForm {
+    border: solid black 2px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1 fr 1fr 1fr;
+    height: 400px;
+    width: 400px;
+    border-radius: 3px;
+    padding: 3px;
+}
+
+.inputForm input {
+    height: 20px;
+    width: 150px;
+}
