@@ -1,5 +1,11 @@
 const mainBody = document.querySelector(".main")
 const displayTable = document.getElementById("currentBooks")
+const addBook = document.getElementById("inputForm")
+const addButton = document.getElementById("addButton")
+const modal = document.getElementById("myModal")
+const close = document.getElementsByClassName("close")[0]
+
+
 
 let myLibrary = [{title: "test book1", author: "testauthor1", pages: 10, isRead: "yes"},
                 {title: "test book2", author: "testauthor2", pages: 20, isRead: "no"},
@@ -21,7 +27,7 @@ function addBookToLibrary() {
 }
 
 function displayBooks(myLibrary) {
-    for (let i = 0;i < 4; i++){
+    for (let i = 0;i < myLibrary.length; i++){
         let row = displayTable.insertRow(-1);
         var cell1 = row.insertCell();
         var cell2 = row.insertCell();
@@ -34,5 +40,22 @@ function displayBooks(myLibrary) {
         displayTable.appendChild(row)
     }
 }
+
+
+//modal logic
+window.onclick = function(event){
+    if (event.target == modal) {
+        modal.style.display = "none"
+    }
+}
+
+close.onclick = function(){
+    modal.style.display = "none";
+}
+
+addButton.onclick = function() {
+    modal.style.display = "grid";
+}
+
 
 displayBooks(myLibrary)
